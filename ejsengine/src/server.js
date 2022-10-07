@@ -15,7 +15,7 @@ app.get('/productos', async (req, res) => {
 })
 
 app.get('/', (req,res) => {
-    res.render('pages/form', {})
+    res.render('pages/forms', {})
 })
 
 app.post('/productos', async(req,res) => {
@@ -24,7 +24,7 @@ app.post('/productos', async(req,res) => {
     res.redirect('/');
 })
 
-const PORT = 4545;
+const PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () => {
 console.log(` >>>>> 🚀 Server started at http://localhost:${PORT}`)
 })

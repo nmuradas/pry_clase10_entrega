@@ -23,18 +23,18 @@ app.get('/productos', async(req, res) => {
     res.render('pages/list', {productos})
 })
 
-app.post('/productos', async(req,res) => {
+app.post('/productos', (req,res) => {
     const {body} = req;
-    await contenedor.save(body);
+    contenedor.save(body);
     res.redirect('/');
 })
 
 app.get('/', (req,res) => {
-    res.render('pages/form', {})
+    res.render('pages/forms', {})
 })
 
 
-const PORT = 1242;
+const PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () => {
 console.log(` >>>>> 🚀 Server started at http://localhost:${PORT}`)
 })
