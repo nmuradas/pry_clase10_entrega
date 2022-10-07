@@ -17,7 +17,8 @@ html
                         td=producto.id
                         td=producto.title
                         td=producto.price
-                        td=producto.thumbnail
+                        td=''
+                            img(src=producto.thumbnail, height='20px', width='20px')
         else 
             h2='No hay productos :('
                 
